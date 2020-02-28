@@ -83,15 +83,11 @@ Section Minimal_propositional_logic.
     assumption.
   Qed.
 
-End Minimal_propositional_logic.
 
 
-(* Exercise 3.3 *)
-(* Redo exercise 3.2, using as many tacticals as needed to perform
+  (* Exercise 3.3 *)
+  (* Redo exercise 3.2, using as many tacticals as needed to perform
  each proof in only one complex step*)
-
-Section Minimal_propositional_logic_one_step.
-  Variables P Q R T: Prop.
 
   Lemma id_P' : P -> P.
   Proof.
@@ -139,4 +135,4 @@ Section Minimal_propositional_logic_one_step.
       apply H; intros H1; apply H1; intro p; apply H; intro H2; assumption.
   Qed.
 
-End Minimal_propositional_logic_one_step.
+End Minimal_propositional_logic.
