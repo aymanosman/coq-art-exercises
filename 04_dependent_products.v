@@ -5,15 +5,22 @@ Section A_declared.
 
   Theorem all_perm : (forall a b:A, R a b) -> forall a b:A, R b a.
   Proof.
-  Admitted.
+    intros H a b.
+    apply H.
+  Qed.
 
   Theorem all_imp_dist : (forall a:A, P a -> Q a) -> (forall a:A, P a) -> forall a:A, Q a.
   Proof.
-  Admitted.
+    intros H H0 a.
+    apply H.
+    apply H0.
+  Qed.
 
 
   Theorem all_delta : (forall a b:A, R a b)->forall a:A, R a a.
   Proof.
-  Admitted.
+    intros H a.
+    apply H.
+  Qed.
 
 End A_declared.
