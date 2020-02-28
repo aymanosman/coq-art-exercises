@@ -31,7 +31,9 @@ Theorem all_perm' : forall (A:Type) (P:A->A->Prop),
     (forall x y: A, P x y)
     -> forall x y:A, P y x.
 Proof.
-Admitted.
+  intros A P H x y.
+  apply H.
+Qed.
 
 Theorem resolution :
   forall (A:Type)(P Q R S:A->Prop),
@@ -39,4 +41,6 @@ Theorem resolution :
     -> (forall b:A, P b -> Q b)
     -> (forall c:A, P c -> R c -> S c).
 Proof.
-Admitted.
+  intros A P Q R S H H0 c Pc Rc.
+  apply H;[apply H0; assumption | assumption].
+Qed.
