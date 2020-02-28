@@ -146,6 +146,7 @@ Section Minimal_propositional_logic.
                (H1 : (P -> R) -> T -> Q)
                (H2 : (P -> R) -> T).
 
+    (*
     Theorem cut_example : Q.
     Proof.
       cut (P -> R).
@@ -153,6 +154,7 @@ Section Minimal_propositional_logic.
       apply H1;[assumption | apply H2; assumption].
       intro p; apply H0; apply H; assumption.
     Qed.
+     *)
 
     Theorem without_cut : Q.
     Proof.
