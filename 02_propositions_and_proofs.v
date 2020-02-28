@@ -135,4 +135,8 @@ Section Minimal_propositional_logic.
       apply H; intros H1; apply H1; intro p; apply H; intro H2; assumption.
   Qed.
 
+
+  (* Exercise 3.5 *)
+  (* Perform the same proof without using `cut` and compare both
+ approaches and both proof terms *)
 End Minimal_propositional_logic.
