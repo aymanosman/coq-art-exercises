@@ -84,3 +84,8 @@ Section Minimal_propositional_logic.
   Qed.
 
 End Minimal_propositional_logic.
+
+
+(* Exercise 3.3 *)
+(* Redo exercise 3.2, using as many tacticals as needed to perform
+ each proof in only one complex step*)
