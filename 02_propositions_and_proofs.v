@@ -139,4 +139,34 @@ Section Minimal_propositional_logic.
   (* Exercise 3.5 *)
   (* Perform the same proof without using `cut` and compare both
  approaches and both proof terms *)
+
+  Section section_for_cut_example.
+    Hypotheses (H : P -> Q)
+               (H0 : Q -> R)
+               (H1 : (P -> R) -> T -> Q)
+               (H2 : (P -> R) -> T).
+
+    Theorem cut_example : Q.
+    Proof.
+      cut (P -> R).
+      intro H3.
+      apply H1;[assumption | apply H2; assumption].
+      intro p; apply H0; apply H; assumption.
+    Qed.
+
+    Theorem without_cut : Q.
+    Proof.
+      apply H1.
+      intro p; apply H0; apply H; assumption.
+      apply H2.
+      intro p; apply H0; apply H; assumption.
+
+      Restart.
+      (* in one step *)
+      Show.
+      apply H1; try apply H2; intro p; apply H0; apply H; assumption.
+    Qed.
+
+  End section_for_cut_example.
+
 End Minimal_propositional_logic.
