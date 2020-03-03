@@ -41,3 +41,16 @@ Proof.
   apply H.
   assumption.
 Qed.
+
+(* Exercise 5.4 *)
+
+Definition dyslexic_imp := forall P Q:Prop, (P -> Q) -> (Q -> P).
+Definition dyslexic_contrap := forall P Q:Prop, (P -> Q) -> (~P -> ~Q).
+
+Theorem dyslexic_imp_is_false : ~dyslexic_imp.
+Proof.
+Admitted.
+
+Theorem dyslexic_contrap_is_false : ~dyslexic_contrap.
+Proof.
+Admitted.
