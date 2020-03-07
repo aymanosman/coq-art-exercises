@@ -55,7 +55,7 @@ Proof.
   apply (dyslexic_imp False True).
   intro false.
   elim false.
-  exact I.
+  apply I.
 Qed.
 
 Theorem dyslexic_contrap_is_false : ~dyslexic_contrap.
@@ -66,6 +66,5 @@ Proof.
   apply (dyslexic_contrap False True).
   intro false; elim false.
   intro false; elim false.
-  exact I.
+  apply I.
 Qed.
-
