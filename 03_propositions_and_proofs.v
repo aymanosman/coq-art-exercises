@@ -6,12 +6,14 @@ Section Minimal_propositional_logic.
 
   Lemma id_P : P -> P.
   Proof.
-    intro p; assumption.
+    intro p.
+    assumption.
   Qed.
 
   Lemma id_PP : (P -> P) -> (P -> P).
   Proof.
-    intro H; assumption.
+    intro H.
+    assumption.
   Qed.
 
   Lemma imp_trans : (P -> Q) -> (Q -> R) -> P -> R.
@@ -28,9 +30,6 @@ Section Minimal_propositional_logic.
     apply H.
     assumption.
     assumption.
-    Undo 3.
-    (* in one step *)
-    apply H; assumption.
   Qed.
 
   Lemma ignore_Q : (P -> R) -> P -> Q -> R.
@@ -46,9 +45,6 @@ Section Minimal_propositional_logic.
     apply H.
     assumption.
     assumption.
-    Undo 3.
-    (* in one step *)
-    apply H; assumption.
   Qed.
 
   Lemma delta_impR : (P -> Q) -> (P -> P -> Q).
@@ -66,9 +62,6 @@ Section Minimal_propositional_logic.
     assumption.
     apply H1.
     assumption.
-    Undo 5.
-    (* in one step *)
-    apply H2;[apply H0 | apply H1];assumption.
   Qed.
 
   Lemma weak_peirce : ((((P -> Q) -> P) -> P) -> Q) -> Q.
@@ -162,11 +155,6 @@ Section Minimal_propositional_logic.
       intro p; apply H0; apply H; assumption.
       apply H2.
       intro p; apply H0; apply H; assumption.
-
-      Restart.
-      (* in one step *)
-      Show.
-      apply H1; try apply H2; intro p; apply H0; apply H; assumption.
     Qed.
 
   End section_for_cut_example.
