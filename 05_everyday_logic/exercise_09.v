@@ -85,6 +85,7 @@ Section Exercise9.
               (fun H0 : ex Q => ex_ind (fun x H1 => ex_intro _ x (or_intror H1))
                                        H0)
               H).
+  Qed.
 
   Theorem theorem2_with_elim : ex P \/ ex Q -> (exists x: A, P x \/ Q x).
   Proof.
@@ -165,7 +166,6 @@ Section Exercise9.
     apply H1.
     apply H.
   Qed.
-
 
   Theorem theorem4 : (forall x : A, P x) -> ~(exists y : A, ~ P y).
   Proof.

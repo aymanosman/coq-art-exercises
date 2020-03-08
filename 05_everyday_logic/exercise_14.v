@@ -1,5 +1,7 @@
 (* Exercise 5.14 *)
 
+Require Import Relations.
+
 Section leibniz.
   Set Implicit Arguments.
   Unset Strict Implicit.
@@ -8,7 +10,6 @@ Section leibniz.
   Definition leibniz (a b : A) : Prop :=
     forall P : A -> Prop, P a -> P b.
 
-  Require Import Relations.
 
   (* Theorem leibniz_sym : symmetric A leibniz. *)
 
