@@ -214,11 +214,6 @@ Qed.
 Theorem ex5_6_4 : forall A B C : Prop, A \/ (B \/ C) -> (A \/ B) \/ C.
 Proof.
   intros A B C H.
-  (* exact (or_ind (fun a => (or_introl (or_introl a))) *)
-  (*               (fun b_or_c => or_ind (fun b => (or_introl (or_intror b))) *)
-  (*                                     (fun c => (or_intror c)) *)
-  (*                                     b_or_c) *)
-  (*               H). *)
   apply (or_ind (A:=(A)) (B:=(B\/C))).
   intro a.
   repeat apply or_introl.
@@ -234,6 +229,17 @@ Proof.
   assumption.
   assumption.
   assumption.
+Qed.
+
+
+Theorem ex5_6_4_with_exact : forall A B C : Prop, A \/ (B \/ C) -> (A \/ B) \/ C.
+Proof.
+  intros A B C H.
+  exact (or_ind (fun a => (or_introl (or_introl a)))
+                (fun b_or_c => or_ind (fun b => (or_introl (or_intror b)))
+                                      (fun c => (or_intror c))
+                                      b_or_c)
+                H).
 Qed.
 
 Theorem ex5_6_4_with_cut : forall A B C : Prop, A \/ (B \/ C) -> (A \/ B) \/ C.
@@ -536,6 +542,3 @@ Proof.
   apply H0.
   assumption.
 Qed.
-
-
-
